@@ -1,0 +1,46 @@
+package Utility;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class Helper {
+
+	public static WebDriver startBrowser(String browser) {
+		// TODO Auto-generated method stub
+
+		WebDriver driver = null ;
+		
+		if (browser.equalsIgnoreCase("Chrome") || browser.equalsIgnoreCase("GC")
+		        || (browser.equalsIgnoreCase("Google Chrome"))){
+			
+			
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\AN20453494\\Selenium-Java\\Selenium Locators\\Chrome Browser Driver\\chromedriver.exe");
+		
+		driver = new ChromeDriver();
+		
+		}
+		
+		else if (browser.equalsIgnoreCase("Edge") || browser.equalsIgnoreCase("EG")
+		        || (browser.equalsIgnoreCase("Microsoft Edge"))){
+		
+		
+			System.setProperty("webdriver.edge.driver", "C:\\Users\\AN20453494\\Selenium-Java\\Selenium Locators\\Edge browser driver\\msedgedriver.exe");
+		
+		driver = new EdgeDriver();
+		} else {
+			
+			System.out.println("Sorry We do not support this browser");
+		}
+		
+		return driver;
+	}
+		
+		public static void closeBrowser(WebDriver driver) {
+			
+			driver.close();
+		}
+			
+		
+	}
+
